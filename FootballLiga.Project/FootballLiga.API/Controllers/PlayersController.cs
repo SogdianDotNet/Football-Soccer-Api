@@ -24,7 +24,7 @@ namespace FootballLiga.API.Controllers
         public PlayersController(
             ILogger<PlayersController> logger,
             AppConfiguration configuration,
-            IAuthenticationDatabaseAccessor authenticationService, 
+            IAuthenticationService authenticationService, 
             IPlayerService playerService) : base (logger, configuration, authenticationService)
         {
             _playerService = playerService;

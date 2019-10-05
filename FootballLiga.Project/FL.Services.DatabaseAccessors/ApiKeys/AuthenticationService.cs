@@ -12,7 +12,7 @@ using Microsoft.Extensions.Logging;
 
 namespace FL.Services.DatabaseAccessors.ApiKeys
 {
-    public class AuthenticationDatabaseAccessor : IAuthenticationDatabaseAccessor
+    public class AuthenticationService : IAuthenticationService
     {
         #region Fields
 
@@ -23,7 +23,7 @@ namespace FL.Services.DatabaseAccessors.ApiKeys
 
         #region Ctor
 
-        public AuthenticationDatabaseAccessor(ILogger<AuthenticationDatabaseAccessor> logger, IRepository<ApiKeyEntity> repository)
+        public AuthenticationService(ILogger<AuthenticationService> logger, IRepository<ApiKeyEntity> repository)
         {
             _logger = logger;
             _authenticationRepository = repository;

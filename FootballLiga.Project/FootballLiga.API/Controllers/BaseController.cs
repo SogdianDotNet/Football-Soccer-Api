@@ -21,7 +21,7 @@ namespace FootballLiga.API.Controllers
     {
         protected ILogger _logger;
         protected readonly AppConfiguration _configuration;
-        private readonly IAuthenticationDatabaseAccessor _authenticationService;
+        private readonly IAuthenticationService _authenticationService;
         private readonly JsonSerializerSettings _serializationSettings;
 
         protected const string SUCCES_STATUS = "SUCCES";
@@ -30,7 +30,7 @@ namespace FootballLiga.API.Controllers
         public BaseController(
             ILogger logger,
             AppConfiguration configuration, 
-            IAuthenticationDatabaseAccessor authenticationService)
+            IAuthenticationService authenticationService)
         {
             _logger = logger;
             _configuration = configuration;

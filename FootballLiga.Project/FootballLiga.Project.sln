@@ -29,13 +29,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FL.Data.Domain.Context", "F
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FootballLiga.API.Extensions", "FootballLiga.API.Extensions\FootballLiga.API.Extensions.csproj", "{54FB8603-CDE1-4FE4-97F8-9DD47B892C7F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FL.Services.DatabaseAccessors", "FL.Services.DatabaseAccessors\FL.Services.DatabaseAccessors.csproj", "{3E691224-74F4-472F-BB52-4837E560C121}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FL.Services.DatabaseAccessors", "FL.Services.DatabaseAccessors\FL.Services.DatabaseAccessors.csproj", "{3E691224-74F4-472F-BB52-4837E560C121}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{E345A8B9-DFA0-46C0-A470-D12F606C8023}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FL.Shared.DataContracts", "FL.Shared.DataContracts\FL.Shared.DataContracts.csproj", "{AB9832DB-DEFE-4398-A24B-6BBED1B3186E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FL.Shared.DataContracts", "FL.Shared.DataContracts\FL.Shared.DataContracts.csproj", "{AB9832DB-DEFE-4398-A24B-6BBED1B3186E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FL.Shared.ClientHttp", "FL.Shared.ClientHttp\FL.Shared.ClientHttp.csproj", "{458E8C26-64CF-4ED5-91EF-9DC057CC660D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FL.Shared.ClientHttp", "FL.Shared.ClientHttp\FL.Shared.ClientHttp.csproj", "{458E8C26-64CF-4ED5-91EF-9DC057CC660D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HelperApplications", "HelperApplications", "{7ABFAD70-A84D-460F-9BA9-B429B8531172}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FL.HelperConsoleApp.RetrieveData", "FL.HelperConsoleApp.RetrieveData\FL.HelperConsoleApp.RetrieveData.csproj", "{ECFB79CA-4ECF-480E-B65D-BF08D2210802}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -79,6 +83,10 @@ Global
 		{458E8C26-64CF-4ED5-91EF-9DC057CC660D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{458E8C26-64CF-4ED5-91EF-9DC057CC660D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{458E8C26-64CF-4ED5-91EF-9DC057CC660D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECFB79CA-4ECF-480E-B65D-BF08D2210802}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECFB79CA-4ECF-480E-B65D-BF08D2210802}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECFB79CA-4ECF-480E-B65D-BF08D2210802}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECFB79CA-4ECF-480E-B65D-BF08D2210802}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -95,6 +103,7 @@ Global
 		{3E691224-74F4-472F-BB52-4837E560C121} = {293C7672-523A-4442-AE27-A1B740E8BC93}
 		{AB9832DB-DEFE-4398-A24B-6BBED1B3186E} = {14DBFA5F-7F07-479C-A5D2-734A6FBE2786}
 		{458E8C26-64CF-4ED5-91EF-9DC057CC660D} = {14DBFA5F-7F07-479C-A5D2-734A6FBE2786}
+		{ECFB79CA-4ECF-480E-B65D-BF08D2210802} = {7ABFAD70-A84D-460F-9BA9-B429B8531172}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8D642507-096D-4659-BC31-82B803AA64FD}

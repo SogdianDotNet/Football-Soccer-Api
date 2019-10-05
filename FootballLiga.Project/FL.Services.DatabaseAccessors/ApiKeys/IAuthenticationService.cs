@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FL.Services.DatabaseAccessors.ApiKeys
 {
-    public interface IAuthenticationDatabaseAccessor
+    public interface IAuthenticationService
     {
         Task<AuthenticationDC> Authenticate(AuthenticateRequest request);
     }
