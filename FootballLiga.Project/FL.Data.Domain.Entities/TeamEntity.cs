@@ -18,7 +18,8 @@ namespace FL.Data.Domain.Entities
 
         public virtual LeagueEntity League { get; set; }
 
-        public virtual ICollection<MatchEntity> Matches { get; set; }
+        public virtual ICollection<MatchEntity> HomeMatches { get; set; }
+        public virtual ICollection<MatchEntity> AwayMatches { get; set; }
         public virtual ICollection<PlayerEntity> Players { get; set; }
     }
 }

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29306.81
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballLiga.API", "FootballLiga.API\FootballLiga.API.csproj", "{31BD41D3-08EF-47E4-BF0F-67F23304AD1B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FootballLiga.API", "FootballLiga.API\FootballLiga.API.csproj", "{31BD41D3-08EF-47E4-BF0F-67F23304AD1B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebAPIs", "WebAPIs", "{6C0929C7-FDA5-47F1-9955-5CCD5182F3FB}"
 EndProject
@@ -17,17 +17,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{29
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{D145717A-951D-4AB3-AC55-3058EA0AEA18}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FL.Data.Domain.Entities", "FL.Data.Domain.Entities\FL.Data.Domain.Entities.csproj", "{814C3078-A4F1-4CE9-9FCD-CEE2F02AC54C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FL.Data.Domain.Entities", "FL.Data.Domain.Entities\FL.Data.Domain.Entities.csproj", "{814C3078-A4F1-4CE9-9FCD-CEE2F02AC54C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repositories", "Repositories", "{F419BEF6-3730-401C-BB9A-2B5EF5142259}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FL.Data.Repositories", "FL.Data.Repositories\FL.Data.Repositories.csproj", "{24CE7E27-0748-41BA-8214-A62B3EEA6C4B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FL.Data.Repositories", "FL.Data.Repositories\FL.Data.Repositories.csproj", "{24CE7E27-0748-41BA-8214-A62B3EEA6C4B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FL.Common.Base", "FL.Common.Base\FL.Common.Base.csproj", "{754F1993-E924-4355-9D4C-8087113304B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FL.Common.Base", "FL.Common.Base\FL.Common.Base.csproj", "{754F1993-E924-4355-9D4C-8087113304B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FL.Data.Domain.Context", "FL.Data.Domain.Context\FL.Data.Domain.Context.csproj", "{A2351090-DAE4-407B-870E-C6C484FFF986}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FL.Data.Domain.Context", "FL.Data.Domain.Context\FL.Data.Domain.Context.csproj", "{A2351090-DAE4-407B-870E-C6C484FFF986}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballLiga.API.Extensions", "FootballLiga.API.Extensions\FootballLiga.API.Extensions.csproj", "{54FB8603-CDE1-4FE4-97F8-9DD47B892C7F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FootballLiga.API.Extensions", "FootballLiga.API.Extensions\FootballLiga.API.Extensions.csproj", "{54FB8603-CDE1-4FE4-97F8-9DD47B892C7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FL.Services.DatabaseAccessors", "FL.Services.DatabaseAccessors\FL.Services.DatabaseAccessors.csproj", "{3E691224-74F4-472F-BB52-4837E560C121}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{E345A8B9-DFA0-46C0-A470-D12F606C8023}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FL.Shared.DataContracts", "FL.Shared.DataContracts\FL.Shared.DataContracts.csproj", "{AB9832DB-DEFE-4398-A24B-6BBED1B3186E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +65,14 @@ Global
 		{54FB8603-CDE1-4FE4-97F8-9DD47B892C7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54FB8603-CDE1-4FE4-97F8-9DD47B892C7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54FB8603-CDE1-4FE4-97F8-9DD47B892C7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E691224-74F4-472F-BB52-4837E560C121}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E691224-74F4-472F-BB52-4837E560C121}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E691224-74F4-472F-BB52-4837E560C121}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E691224-74F4-472F-BB52-4837E560C121}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB9832DB-DEFE-4398-A24B-6BBED1B3186E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB9832DB-DEFE-4398-A24B-6BBED1B3186E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB9832DB-DEFE-4398-A24B-6BBED1B3186E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB9832DB-DEFE-4398-A24B-6BBED1B3186E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -72,6 +86,8 @@ Global
 		{754F1993-E924-4355-9D4C-8087113304B5} = {6CF339D9-1C88-4ACC-9BBA-063576127F5C}
 		{A2351090-DAE4-407B-870E-C6C484FFF986} = {D145717A-951D-4AB3-AC55-3058EA0AEA18}
 		{54FB8603-CDE1-4FE4-97F8-9DD47B892C7F} = {6C0929C7-FDA5-47F1-9955-5CCD5182F3FB}
+		{3E691224-74F4-472F-BB52-4837E560C121} = {293C7672-523A-4442-AE27-A1B740E8BC93}
+		{AB9832DB-DEFE-4398-A24B-6BBED1B3186E} = {14DBFA5F-7F07-479C-A5D2-734A6FBE2786}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8D642507-096D-4659-BC31-82B803AA64FD}

@@ -11,5 +11,18 @@ namespace FL.Data.Domain.Entities
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long Id { get; set; }
+
+        public string Firstname { get; set; }
+        public string Lastname { get; set; }
+
+        [ForeignKey("Nationality")]
+        public int NationalityId { get; set; }
+
+        [ForeignKey("Team")]
+        public int TeamId { get; set; }
+
+        public virtual TeamEntity Team { get; set; }
+
+        public virtual CountryEntity Nationality { get; set; }
     }
 }
