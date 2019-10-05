@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FL.Services.DatabaseAccessors.Players
 {
-    public interface IPlayerDatabaseAccessor
+    public interface IPlayerService
     {
         Task<PlayerDC> GetPlayerById(long id);
         Task<List<PlayerDC>> GetPlayersByTeamId(int teamId);

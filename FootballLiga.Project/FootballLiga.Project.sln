@@ -35,6 +35,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{E345A8B9
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FL.Shared.DataContracts", "FL.Shared.DataContracts\FL.Shared.DataContracts.csproj", "{AB9832DB-DEFE-4398-A24B-6BBED1B3186E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FL.Shared.ClientHttp", "FL.Shared.ClientHttp\FL.Shared.ClientHttp.csproj", "{458E8C26-64CF-4ED5-91EF-9DC057CC660D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +75,10 @@ Global
 		{AB9832DB-DEFE-4398-A24B-6BBED1B3186E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB9832DB-DEFE-4398-A24B-6BBED1B3186E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB9832DB-DEFE-4398-A24B-6BBED1B3186E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{458E8C26-64CF-4ED5-91EF-9DC057CC660D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{458E8C26-64CF-4ED5-91EF-9DC057CC660D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{458E8C26-64CF-4ED5-91EF-9DC057CC660D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{458E8C26-64CF-4ED5-91EF-9DC057CC660D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -88,6 +94,7 @@ Global
 		{54FB8603-CDE1-4FE4-97F8-9DD47B892C7F} = {6C0929C7-FDA5-47F1-9955-5CCD5182F3FB}
 		{3E691224-74F4-472F-BB52-4837E560C121} = {293C7672-523A-4442-AE27-A1B740E8BC93}
 		{AB9832DB-DEFE-4398-A24B-6BBED1B3186E} = {14DBFA5F-7F07-479C-A5D2-734A6FBE2786}
+		{458E8C26-64CF-4ED5-91EF-9DC057CC660D} = {14DBFA5F-7F07-479C-A5D2-734A6FBE2786}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8D642507-096D-4659-BC31-82B803AA64FD}

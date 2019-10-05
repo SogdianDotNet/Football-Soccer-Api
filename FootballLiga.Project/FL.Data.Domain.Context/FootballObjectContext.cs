@@ -1,4 +1,5 @@
 ﻿using FL.Data.Domain.Entities;
+using FL.Data.Domain.Entities.Authentication;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -29,6 +30,7 @@ namespace FL.Data.Domain.Context
         public DbSet<PlayerEntity> Players { get; set; }
         public DbSet<SeasonEntity> Seasons { get; set; }
         public DbSet<TeamEntity> Teams { get; set; }
+        public DbSet<ApiKeyEntity> ApiKeys { get; set; }
 
         #endregion
 
@@ -38,10 +40,12 @@ namespace FL.Data.Domain.Context
         {
             modelBuilder.Entity<TeamEntity>().HasMany(t => t.HomeMatches)
                 .WithOne(m => m.HomeTeam)
-                .HasForeignKey(m => m.HomeTeamId);
+                .HasForeignKey(m => m.HomeTeamId)
+                .OnDelete(DeleteBehavior.Restrict);
             modelBuilder.Entity<TeamEntity>().HasMany(t => t.AwayMatches)
                 .WithOne(m => m.AwayTeam)
-                .HasForeignKey(m => m.AwayTeamId);
+                .HasForeignKey(m => m.AwayTeamId)
+                .OnDelete(DeleteBehavior.Restrict);
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

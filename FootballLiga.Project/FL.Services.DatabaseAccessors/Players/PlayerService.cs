@@ -16,7 +16,7 @@ namespace FL.Services.DatabaseAccessors.Players
     /// <summary>
     /// 
     /// </summary>
-    public class PlayerDatabaseAccessor : IPlayerDatabaseAccessor
+    public class PlayerService : IPlayerService
     {
         #region Fields
 
@@ -27,8 +27,8 @@ namespace FL.Services.DatabaseAccessors.Players
 
         #region Ctor
 
-        public PlayerDatabaseAccessor(
-            ILogger<PlayerDatabaseAccessor> logger,
+        public PlayerService(
+            ILogger<PlayerService> logger,
             IRepository<PlayerEntity> playersRepository)
         {
             _logger = logger;

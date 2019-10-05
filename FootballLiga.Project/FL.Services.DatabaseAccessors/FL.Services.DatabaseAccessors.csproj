@@ -5,12 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="2.2.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\FL.Common.Base\FL.Common.Base.csproj" />
     <ProjectReference Include="..\FL.Data.Domain.Entities\FL.Data.Domain.Entities.csproj" />
+    <ProjectReference Include="..\FL.Shared.ClientHttp\FL.Shared.ClientHttp.csproj" />
     <ProjectReference Include="..\FL.Shared.DataContracts\FL.Shared.DataContracts.csproj" />
   </ItemGroup>
 

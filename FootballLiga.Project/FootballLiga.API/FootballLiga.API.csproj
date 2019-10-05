@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FL.Services.DatabaseAccessors\FL.Services.DatabaseAccessors.csproj" />
     <ProjectReference Include="..\FootballLiga.API.Extensions\FootballLiga.API.Extensions.csproj" />
   </ItemGroup>
 
