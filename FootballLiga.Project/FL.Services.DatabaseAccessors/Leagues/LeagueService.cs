@@ -88,6 +88,7 @@ namespace FL.Services.DatabaseAccessors.Leagues
                 watch.Stop();
                 _logger.LogInformation($"Finished method {this.GetCallerMemberName()} in class {GetType().Name} in {watch.Elapsed.TotalSeconds} seconds.");
             }
+            return null;
         }
 
         #region Private methods

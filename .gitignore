@@ -338,3 +338,4 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+/FootballLiga.Project/FL.HelperConsoleApp.RetrieveData/configuration.json
