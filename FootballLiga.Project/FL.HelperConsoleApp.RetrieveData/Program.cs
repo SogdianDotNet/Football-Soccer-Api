@@ -86,7 +86,7 @@ namespace FL.HelperConsoleApp.RetrieveData
                 using (var httpRequest = new HttpRequestMessage(HttpMethod.Get, String.Format(url, competitionId)))
                 {
                     httpRequest.Headers.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                    httpRequest.Headers.Add("X-Auth-Token", "b41563624e5140e3a6770a3f29c20524");
+                    httpRequest.Headers.Add("X-Auth-Token", "");
 
                     using (var httpResponse = httpClient.SendAsync(httpRequest).GetAwaiter().GetResult())
                     {
