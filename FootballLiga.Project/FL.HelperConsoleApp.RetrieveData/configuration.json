@@ -1,0 +1,13 @@
+{
+  "KeysAndUrls": {
+    "ApiKey": "Hn2Aicoa6yjn9jsY",
+    "AppSecret": "kavvm2R3qLK7JQIrdK1wWqH2Z0q8kT7F",
+    "AzureSqlDatabase": "Server=tcp:footballsoccerdb.database.windows.net,1433;Initial Catalog=footballdb;Persist Security Info=False;User ID=fsadmin;Password=Barendrecht1!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;",
+    "GetListOfLeagues": "http://livescore-api.com/api-client/leagues/list.json?key={0}&secret={1}",
+    "GetListOfCountries": "http://livescore-api.com/api-client/countries/list.json?key={0}&secret={1}",
+    "GetCompetitionsByCountry": "https://livescore-api.com/api-client/competitions/scores.json?key={0}&secret={1}&country_id={2}",
+    "GetListOfTeamsByCountry": "https://livescore-api.com/api-client/teams/list.json?key={0}&secret={1}&country_id={2}",
+    "GetListOfPastMatches": "http://livescore-api.com/api-client/scores/history.json?key={0}&secret={1}",
+    "GetListOfMatchesOfCompetition": "http://livescore-api.com/api-client/fixtures/matches.json?key={0}&secret={1}&competition_id={2}"
+  }
+}
