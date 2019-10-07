@@ -161,8 +161,6 @@ namespace FL.Services.DatabaseAccessors.Players
             }
         }
 
-        #endregion
-
         #region Private methods
 
         private IEnumerable<PlayerEntity> GetPlayers(Expression<Func<PlayerEntity, bool>> filter = null)
@@ -210,6 +208,8 @@ namespace FL.Services.DatabaseAccessors.Players
                 };
             }
         }
+
+        #endregion
 
         #endregion
     }

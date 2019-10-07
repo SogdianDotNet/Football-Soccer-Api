@@ -13,6 +13,7 @@
     <ProjectReference Include="..\FL.Common.Base\FL.Common.Base.csproj" />
     <ProjectReference Include="..\FL.Data.Domain.Context\FL.Data.Domain.Context.csproj" />
     <ProjectReference Include="..\FL.Data.Repositories\FL.Data.Repositories.csproj" />
+    <ProjectReference Include="..\FL.Services.DatabaseAccessors\FL.Services.DatabaseAccessors.csproj" />
   </ItemGroup>
 
   <ItemGroup>

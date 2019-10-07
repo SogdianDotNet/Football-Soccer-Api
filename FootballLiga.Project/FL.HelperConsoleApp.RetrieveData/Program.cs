@@ -40,7 +40,9 @@ namespace FL.HelperConsoleApp.RetrieveData
             var serviceProvider = serviceCollection.BuildServiceProvider();
             configuration = serviceProvider.GetService<ConfigurationSettings>();
 
-            var lol = RetrieveAndInsertCompetitions();
+            var countries = RetrieveCountries();
+
+            var teams = RetrieveAllTeamsByCountryId(countries.FirstOrDefault(x => x.name == "Germany").id);
 
             Console.ReadLine();
         }
@@ -52,6 +54,29 @@ namespace FL.HelperConsoleApp.RetrieveData
             services.AddSingleton<IDbContext, FootballObjectContext>();
             services.AddSingleton(typeof(IRepository<>), typeof(EfRepository<>));
             services.AddSingleton<IPlayerService, PlayerService>();
+        }
+
+        private static Country[] RetrieveCountries()
+        {
+            var countries = new List<Country>();
+            using (var httpClient = new HttpClient())
+            {
+                string url = string.Format(configuration.GetListOfCountries, configuration.ApiKey, configuration.AppSecret);
+                using (var httpRequest = new HttpRequestMessage(HttpMethod.Get, url))
+                {
+                    httpRequest.Headers.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+
+                    using (var httpResponse = httpClient.SendAsync(httpRequest).GetAwaiter().GetResult())
+                    {
+                        string content = httpResponse.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+
+                        JToken jsonToken = JToken.Parse(content);
+
+                        countries = jsonToken["data"]["country"].ToObject<List<Country>>();
+                    }
+                }
+            }
+            return countries.ToArray();
         }
 
         private static List<Competition> RetrieveAndInsertCompetitions()
@@ -77,16 +102,15 @@ namespace FL.HelperConsoleApp.RetrieveData
             return competitions;
         }
 
-        private static List<Team> RetrieveAllTeamsByCompetitionId(int competitionId)
+        private static List<Competition> RetrieveCompetitionsByCountry(string countryId)
         {
-            var teams = new List<Team>();
+            var competitions = new List<Competition>();
             using (var httpClient = new HttpClient())
             {
-                string url = "https://api.football-data.org/v2/competitions/{0}/teams";
-                using (var httpRequest = new HttpRequestMessage(HttpMethod.Get, String.Format(url, competitionId)))
+                string url = string.Format(configuration.GetCompetitionsByCountry, configuration.ApiKey, configuration.AppSecret, countryId);
+                using (var httpRequest = new HttpRequestMessage(HttpMethod.Get, url))
                 {
                     httpRequest.Headers.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                    httpRequest.Headers.Add("X-Auth-Token", "b41563624e5140e3a6770a3f29c20524");
 
                     using (var httpResponse = httpClient.SendAsync(httpRequest).GetAwaiter().GetResult())
                     {
@@ -94,11 +118,85 @@ namespace FL.HelperConsoleApp.RetrieveData
 
                         JToken jsonToken = JToken.Parse(content);
 
-                        teams = jsonToken["teams"].ToObject<List<Team>>();
+                        competitions = jsonToken["data"]["league"].ToObject<List<Competition>>();
+                    }
+                }
+            }
+            return competitions;
+        }
+
+        private static List<Team> RetrieveAllTeamsByCountryId(string countryId)
+        {
+            var teams = new List<Team>();
+            using (var httpClient = new HttpClient())
+            {
+                using (var httpRequest = new HttpRequestMessage(HttpMethod.Get, 
+                    string.Format(configuration.GetListOfTeamsByCountry, configuration.ApiKey, configuration.AppSecret, countryId)))
+                {
+                    httpRequest.Headers.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+
+                    using (var httpResponse = httpClient.SendAsync(httpRequest).GetAwaiter().GetResult())
+                    {
+                        string content = httpResponse.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+
+                        JToken jsonToken = JToken.Parse(content);
+
+                        teams = jsonToken["data"]["teams"].ToObject<List<Team>>();
                     }
                 }
             }
             return teams;
+        }
+
+        //private static List<Team> RetrieveAllTeamsByCompetitionId(int competitionId)
+        //{
+        //    var teams = new List<Team>();
+        //    using (var httpClient = new HttpClient())
+        //    {
+        //        using (var httpRequest = new HttpRequestMessage(HttpMethod.Get, string.Format(configuration.get, competitionId)))
+        //        {
+        //            httpRequest.Headers.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+
+        //            using (var httpResponse = httpClient.SendAsync(httpRequest).GetAwaiter().GetResult())
+        //            {
+        //                string content = httpResponse.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+
+        //                JToken jsonToken = JToken.Parse(content);
+
+        //                teams = jsonToken["teams"].ToObject<List<Team>>();
+        //            }
+        //        }
+        //    }
+        //    return teams;
+        //}
+
+        private static List<Match> RetrieveAllPastMatches(string competitionId)
+        {
+            var matches = new List<Match>();
+
+            using (var httpClient = new HttpClient())
+            {
+                string url = string.Format(configuration.GetListOfMatchesOfCompetition,
+                    configuration.ApiKey,
+                    configuration.AppSecret,
+                    competitionId);
+
+                using (var request = new HttpRequestMessage(HttpMethod.Get, url))
+                {
+                    request.Headers.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+
+                    using (var response = httpClient.SendAsync(request).GetAwaiter().GetResult())
+                    {
+                        string content = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+
+                        JToken jsonToken = JToken.Parse(content);
+
+                        matches = jsonToken["data"]["fixtures"].ToObject<List<Match>>();
+                    }
+                }
+            }
+
+            return matches;
         }
     }
 }

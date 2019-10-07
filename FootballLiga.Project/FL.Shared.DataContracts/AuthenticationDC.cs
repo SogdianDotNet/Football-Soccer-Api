@@ -11,6 +11,8 @@ namespace FL.Shared.DataContracts
         public string ApiKey { get; set; }
         public DateTime ValidUntilDateUtc { get; set; }
 
+        public bool DoesExist { get; set; }
+
         public bool IsExpired
         {
             get

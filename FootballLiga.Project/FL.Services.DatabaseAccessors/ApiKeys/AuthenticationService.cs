@@ -52,6 +52,8 @@ namespace FL.Services.DatabaseAccessors.ApiKeys
 
                 if (authEntity != null)
                     return Task.FromResult(new AuthenticationDC { Id = authEntity.Id, Username = authEntity.Username, ApiKey = authEntity.ApiKey, ValidUntilDateUtc = authEntity.ValidUntilDateUtc });
+
+                return Task.FromResult(new AuthenticationDC { DoesExist = false });
             }
             catch (Exception exception)
             {
@@ -63,7 +65,6 @@ namespace FL.Services.DatabaseAccessors.ApiKeys
                 watch.Stop();
                 _logger.LogInformation($"Finished method {this.GetCallerMemberName()} in class {GetType().Name} in {watch.Elapsed.TotalSeconds} seconds.");
             }
-            return null;
         }
 
         #endregion

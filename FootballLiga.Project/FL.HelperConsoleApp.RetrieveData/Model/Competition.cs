@@ -9,6 +9,12 @@ namespace FL.HelperConsoleApp.RetrieveData.Model
     {
         public string id { get; set; }
         public string name { get; set; }
-        public string country_id { get; set; }
+        public CompCountry[] countries { get; set; }
+    }
+
+    public class CompCountry
+    {
+        public string id { get; set; }
+        public string name { get; set; }
     }
 }

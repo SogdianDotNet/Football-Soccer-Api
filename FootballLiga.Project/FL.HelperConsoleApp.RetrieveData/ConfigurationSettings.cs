@@ -11,5 +11,10 @@ namespace FL.HelperConsoleApp.RetrieveData
         public string AzureSqlDatabase { get; set; }
         public string GetListOfLeagues { get; set; }
         public string GetListOfCountries { get; set; }
+        public string GetCompetitionsByCountry { get; set; }
+        public string GetListOfTeamsByCountry { get; set; }
+        public string GetListOfPastMatches { get; set; }
+        public string GetListOfMatchesOfCompetition { get; set; }
+
     }
 }

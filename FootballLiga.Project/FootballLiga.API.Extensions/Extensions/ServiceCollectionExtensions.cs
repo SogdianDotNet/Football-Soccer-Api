@@ -2,6 +2,9 @@
 using FL.Common.Base.Data;
 using FL.Data.Domain.Context;
 using FL.Data.Repositories;
+using FL.Services.DatabaseAccessors.ApiKeys;
+using FL.Services.DatabaseAccessors.Leagues;
+using FL.Services.DatabaseAccessors.Players;
 using FootballLiga.API.Extensions.Infrastructure;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -46,6 +49,9 @@ namespace FootballLiga.API.Extensions.Extensions
         {
             services.AddSingleton<IDbContext, FootballObjectContext>();
             services.AddSingleton(typeof(IRepository<>), typeof(EfRepository<>));
+            services.AddSingleton<IAuthenticationService, AuthenticationService>();
+            services.AddSingleton<IPlayerService, PlayerService>();
+            services.AddSingleton<ILeagueService, LeagueService>();
             return services;
         }
 
